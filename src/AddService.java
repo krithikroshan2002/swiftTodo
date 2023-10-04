@@ -4,8 +4,10 @@ public class AddService {
 
     private final Stack<Integer> valueSet = new Stack<>();
 
-    public void pushFunction( int value, HomeView view) {
-        valueSet.push(value);
+    public void pushFunction(HomeView view, int... value) {
+        for (int i: value) {
+            valueSet.push(i);
+        }
         System.out.printf("Sum = %d\n",getValue());
         view.next();
     }
